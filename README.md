@@ -26,13 +26,13 @@ AI-powered business idea and market analysis with Flask and Gemini.
 
 Open `http://localhost:5000` in your browser.
 
-## Deploy publicly
+## Deploy for free
 
-This repository includes a `render.yaml` blueprint for deployment on Render:
+The app is ready for a free public [Hugging Face Space](https://huggingface.co/spaces):
 
-1. Sign in to [Render](https://render.com) and choose **New > Blueprint**.
-2. Connect the `Progyadip/business-analyzer` GitHub repository.
-3. Deploy the blueprint.
-4. In the Render service settings, set the private `GEMINI_API_KEY` environment variable.
+1. Create a new Space and choose **Docker** with the free CPU hardware.
+2. Copy the files from this repository into the Space, or import this GitHub repository if that option is available.
+3. In the Space settings, add a secret named `GEMINI_API_KEY`.
+4. Wait for the Docker build to finish. The Space URL is the public website.
 
-Render will build and start the Flask app automatically. The public URL will be shown on the service page, and future pushes to `main` will redeploy it.
+The Docker image listens on port `7860`, and the API key remains server-side in the Space secret. Do not commit `.env` or an API key.
